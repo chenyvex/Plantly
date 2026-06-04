@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plantly | Premium Plant Care</title>
+    
+    <!-- Premium Editorial Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+    <style>
+        /* Minimalist Luxury Color Palette */
+        :root {
+            --bg-cream: #FDFDFB;      /* Ultra-clean luxury off-white */
+            --bg-stone: #F5F5F2;      /* Soft, premium split section background */
+            --white: #FFFFFF;
+            --dark-forest: #0B1D12;   /* Deep, expensive botanical green */
+            --sage-accent: #4A6B53;   /* High-end muted sage */
+            --charcoal: #1C1C1C;      /* Soft pure black for crisp text readability */
+            --muted-gray: #656565;    /* Sophisticated gray for secondary copy */
+            --greenthingy: #abcfb5;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--greenthingy);
+            color: var(--charcoal);
+            font-family: 'Montserrat', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Clean Fixed Luxury Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(253, 253, 251, 0.9);
+            backdrop-filter: blur(20px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 8%;
+            box-sizing: border-box;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0,0,0,0.03);
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: var(--dark-forest);
+            letter-spacing: -0.5px;
+            text-decoration: none;
+        }
+
+        nav a {
+            color: var(--charcoal);
+            text-decoration: none;
+            margin-left: 35px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--sage-accent);
+        }
+
+        /* Section Layouts */
+        section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 140px 8% 80px 8%; 
+            box-sizing: border-box;
+        }
+
+        /* Alternating Backgrounds for a Clean Flow */
+        section:nth-of-type(odd) { background-color: var(--bg-cream); }
+        section:nth-of-type(even) { background-color: var(--bg-stone); }
+
+        /* Seamless Borderless Containers */
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            width: 100%;
+            align-items: center;
+            gap: 80px; /* Generous clean spacing */
+        }
+
+        .container.reverse {
+            flex-direction: row-reverse;
+        }
+
+        /* Text Block Presentation */
+        .text-panel {
+            flex: 1.2;
+            min-width: 320px;
+        }
+
+        .text-panel h2 {
+            color: var(--sage-accent);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+        }
+
+        .text-panel h1 {
+            color: var(--dark-forest);
+            font-family: 'Playfair Display', serif;
+            font-size: 3.6rem;
+            font-weight: 400;
+            line-height: 1.15;
+            margin-top: 0;
+            margin-bottom: 30px;
+            letter-spacing: -0.5px;
+        }
+
+        .text-panel p {
+            font-size: 1.15rem;
+            color: var(--muted-gray);
+            line-height: 1.8;
+            margin-bottom: 25px;
+            font-weight: 300;
+        }
+
+        .text-panel ul {
+            font-size: 1.1rem;
+            color: var(--muted-gray);
+            line-height: 1.8;
+            padding-left: 20px;
+            font-weight: 300;
+        }
+
+        .text-panel li {
+            margin-bottom: 16px;
+        }
+
+        .text-panel strong {
+            color: var(--charcoal);
+            font-weight: 500;
+        }
+
+        /* Elegant Frame-free Image Panel */
+        .mockup-panel {
+            flex: 0.8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-width: 320px;
+        }
+
+        .mockup-image {
+            max-width: 310px;
+            width: 100%;
+            height: auto;
+            border-radius: 40px; /* Smooth software curves */
+            box-shadow: 0 40px 80px rgba(11, 29, 18, 0.12); /* Soft ambient luxury shadow */
+            background-color: var(--white);
+        }
+
+        /* Ultra-Clean Hero Presentation */
+        #hero {
+            background-color: var(--bg-cream) !important;
+            text-align: center;
+        }
+
+        #hero .container {
+            justify-content: center;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        #hero h1 { 
+            color: var(--dark-forest); 
+            font-size: 6rem; 
+            margin-bottom: 15px;
+            font-weight: 400;
+            font-style: italic;
+        }
+        
+        #hero p { 
+            color: var(--muted-gray); 
+            max-width: 780px; 
+            margin: 0 auto; 
+            font-size: 1.35rem;
+            line-height: 1.9;
+            font-weight: 300;
+        }
+        
+        #hero strong {
+            color: var(--dark-forest);
+            font-weight: 500;
+        }
+
+        /* Elegant Green Footer */
+        footer {
+            background-color: var(--dark-forest);
+            color: var(--bg-cream);
+            padding: 100px 8%;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 400;
+            font-style: italic;
+            color: var(--bg-cream);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .footer-tagline {
+            font-size: 0.95rem;
+            color: #8CA393; /* Softened green text for the tagline */
+            letter-spacing: 1px;
+            font-weight: 300;
+            margin: 0;
+            margin-bottom: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 40px;
+        }
+
+        .social-links a {
+            color: var(--bg-cream);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-decoration: none;
+            opacity: 0.7;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .social-links a:hover {
+            opacity: 1;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Luxury Navigation Header -->
+    <header>
+        <a href="#hero" class="logo">plantly.</a>
+        <nav>
+            <a href="#hero">Overview</a>
+            <a href="#stage1">Scan</a>
+            <a href="#stage2">Maturity</a>
+            <a href="#stage3">Verification</a>
+            <a href="#stage4">Rewards</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="container">
+            <h1>plantly.</h1>
+            <p>On average, <strong>50% of people</strong> routinely forget to water their house plants. On the other hand, overwatering is equally fatal: <strong>overwatering remains the leading cause of plant death</strong> globally.</p>
+            <p>The <i>plantly.<i> app bridges the divide between neglect and over hydration, seamlessly adding advanced tracking, interactive diagnostics, and refined gamification to elevate plant care standards.</p>
+        </div>
+    </section>
+
+    <!-- Stage 1 Section -->
+    <section id="stage1">
+        <div class="container">
+            <div class="text-panel">
+                <h2>Stage 01</h2>
+                <h1>Snap, Identify, & Confirm</h1>
+                <p>Specific plants need specific needs, so the plant requires accurate classification. The user experience opens with a seamless interface that utilizes the camera to evaluate unique profiles.</p>
+                <ul>
+                    <li><strong>AI Computer Vision:</strong> The ecosystem analyzes distinct patterns to instantly identify the correct botanical family.</li>
+                    <li><strong>User Verification:</strong> An intuitive check sequence confirms accuracy before loading custom hydration parameters.</li>
+                </ul>
+            </div>
+            <div class="mockup-panel">
+                <img src="Scan Your plant (1).png" alt="Plantly Scanning Interface" class="mockup-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Stage 2 Section -->
+    <section id="stage2">
+        <div class="container reverse">
+            <div class="text-panel">
+                <h2>Stage 02</h2>
+                <h1>Calibrated to Maturity</h1>
+                <p>A developing sprout demands a profoundly different hydration routines than a fully matured, established plant.</p>
+                <ul>
+                    <li><strong>Maturity Registration:</strong> Users smoothly input the approximate age of their plant directly into the digital profile.</li>
+                    <li><strong>Dynamic Scheduling:</strong> The algorithm recalibrates care criteria instantly. Delicate sprouts transition to lighter, frequent cycles, while mature roots receive deep, spaced intervals.</li>
+                </ul>
+            </div>
+            <div class="mockup-panel">
+                <img src="sprout2.jpeg" alt="Plantly Age Interface" class="mockup-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Stage 3 Section -->
+    <section id="stage3">
+        <div class="container">
+            <div class="text-panel">
+                <h2>Stage 03</h2>
+                <h1>The Interactive Verification</h1>
+                <p>Rather than sending standard alerts, Plantly operates as an intelligent digital assistant, requiring a quick, real world diagnostic before any water is poured.</p>
+                <ul>
+                    <li><strong>The Finger Test:</strong> The app guides users to insert a finger 1–2 inches deep into the topsoil to personally cross-reference hydration state.</li>
+                    <li><strong>Smart Dialogues:</strong> Confirming "moist soil" prompts the application assistant to strictly halt watering to avoid root rot and mold, while confirming "dry soil" safely authorizes hydration.</li>
+                    <li><strong>Frictionless Logging:</strong> Ticking a simple verification checklist securely timestamps the action, resetting the dynamic timer flawlessly.</li>
+                </ul>
+            </div>
+            <div class="mockup-panel">
+                <img src="soil.png" alt="Plantly Verification Interface" class="mockup-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Stage 4 Section -->
+    <section id="stage4">
+        <div class="container reverse">
+            <div class="text-panel">
+                <h2>Stage 04</h2>
+                <h1>Cultivating Habits</h1>
+                <p>To incentivize daily check ins and cultivate persistent wellness routines, Plantly weaves gamification into the tracking layout.</p>
+                <ul>
+                    <li><strong>The Three-Day Goal:</strong> Preserving proper checkups and logging precise watering milestones over three consecutive days triggers an elite status tier.</li>
+                    <li><strong>The Streak Companion:</strong> A minimalist digital pet hatches directly into the screen interface, growing and flourishing in exact synchronicity with your physical houseplants.</li>
+                </ul>
+            </div>
+            <div class="mockup-panel">
+                <img src="42386994903.jpg" alt="Plantly Streak Companion Interface" class="mockup-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Deep Green Footer -->
+    <footer>
+        <a href="#hero" class="footer-logo">plantly.</a>
+        <p class="footer-tagline">Cultivating healthier botanical habits, daily.</p>
+        <div class="social-links">
+            <!-- Replace the "#" with your actual links if needed -->
+            <a href="https://mail.google.com/" target="_blank">TikTok</a>
+            <a href="https://mail.google.com/" target="_blank">Facebook</a>
+        </div>
+    </footer>
+
+</body>
+</html>
